@@ -20,18 +20,20 @@ public class CopyrightWriter {
     public static String copyRight = "// Copyright 2016\n" + "// All rights reserved\n" + "// ********************\n";
     public static String htmlCopyRight = "<!--\nCopyright 2016\n" + "All rights reserved\n" + "-->\n";
     public static String hashCopyRight = "# Copyright 2016 #\n" + "# All rights reserved #\n";
+    
+    
 
     public static void writeCopyright(String copyRight) throws IOException {
         File file = new File("CopyRight.txt");
-        try (FileWriter fw = new FileWriter(file)) {
+        try (FileWriter fw = new FileWriter(file,Boolean.TRUE)) {
             fw.write(copyRight);
         }
     }
     
     public static void main(String[] args) {
         try {
-            //writeCopyright(copyRight);
-            //writeCopyright(htmlCopyRight);
+            writeCopyright(copyRight);
+            writeCopyright(htmlCopyRight);
             writeCopyright(hashCopyRight);
             
         } catch (IOException ex) {
